@@ -1,0 +1,195 @@
+/** @format */
+
+@charset "UTF-8";
+/* CSS Document */
+
+/*==============================================================
+	Common Styles Initials
+==============================================================*/
+
+html {
+    -webkit-text-size-adjust: none; /* Prevent font scaling in landscape */
+    width: 100%;
+    height: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: inherit !important;
+}
+
+*,
+*:after,
+*:before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'montserrat', sans-serif;
+    font-size: 14px;
+    color: #000;
+    font-weight: 400;
+    background: #fff;
+    width: 100%;
+    min-height: 100%;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+}
+
+a {
+    outline: none;
+    text-decoration: none;
+    color: #000;
+}
+
+a:hover,
+a:focus {
+    outline: none;
+    text-decoration: none;
+    color: #000;
+}
+
+.btn:focus {
+    box-shadow: none;
+}
+
+input[type='submit'] {
+    -webkit-appearance: none;
+    appearance: none;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+}
+
+input,
+textarea,
+select {
+    outline: none;
+    resize: none;
+    font-family: 'montserrat', sans-serif;
+}
+
+a,
+input,
+button {
+    outline: none !important;
+}
+
+button::-moz-focus-inner {
+    border: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+    font-family: 'merriweather', serif;
+    line-height: 1.3;
+    color: #000;
+}
+
+img {
+    border: 0;
+    vertical-align: top;
+    max-width: 100%;
+    height: auto;
+}
+
+ul,
+ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+p {
+    margin: 0 0 15px 0;
+    padding: 0;
+}
+
+.slick-slide {
+    outline: none !important;
+}
+
+input[type='search']::-ms-clear {
+    display: none;
+    width: 0;
+    height: 0;
+}
+
+input[type='search']::-ms-reveal {
+    display: none;
+    width: 0;
+    height: 0;
+}
+
+input[type='search']::-webkit-search-decoration,
+input[type='search']::-webkit-search-cancel-button,
+input[type='search']::-webkit-search-results-button,
+input[type='search']::-webkit-search-results-decoration {
+    display: none;
+}
+
+input[type='search'] {
+    -webkit-appearance: textfield;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.search-dropdown input {
+    -webkit-appearance: textfield;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+/*==============================================================
+	Bootstrap Hack
+==============================================================*/
+
+.form-control::-webkit-input-placeholder {
+    opacity: 1;
+    color: #17181a;
+}
+.form-control:-moz-placeholder {
+    opacity: 1;
+    color: #17181a;
+}
+.form-control::-moz-placeholder {
+    opacity: 1;
+    color: #17181a;
+}
+.form-control:-ms-input-placeholder {
+    opacity: 1;
+    color: #17181a;
+}
+input::-webkit-input-placeholder {
+    opacity: 1;
+    color: #17181a;
+}
+input:-moz-placeholder {
+    opacity: 1;
+}
+input::-moz-placeholder {
+    opacity: 1;
+}
+input:-ms-input-placeholder {
+    opacity: 1;
+}
+
+/*==============================================================
+	Custom Style
+==============================================================*/
+.container {
+    max-width: 1270px;
+    width: 100%;
+    padding: 0 15px;
+}

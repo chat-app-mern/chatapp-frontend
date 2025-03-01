@@ -44,6 +44,7 @@ a {
     outline: none;
     text-decoration: none;
     color: #000;
+    transition: all 0.4s ease-in-out;
 }
 
 a:hover,
@@ -69,7 +70,7 @@ textarea,
 select {
     outline: none;
     resize: none;
-    font-family: 'montserrat', sans-serif;
+    font-family: "Poppins", sans-serif;
 }
 
 a,
@@ -91,7 +92,7 @@ h6 {
     margin: 0;
     padding: 0;
     font-weight: normal;
-    font-family: 'merriweather', serif;
+    font-family: "Poppins", sans-serif;
     line-height: 1.3;
     color: #000;
 }
@@ -190,7 +191,68 @@ input:-ms-input-placeholder {
 	Custom Style
 ==============================================================*/
 .container {
-    max-width: 1270px;
+    max-width: 1266px;
     width: 100%;
-    padding: 0 15px;
+    padding: 0 16px;
+    margin: 0 auto;
 }
+
+.btn.btn-primary {
+    display: inline-block;
+    color: #ffffff;
+    background-color: #515DEF; 
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 1.5;
+    padding: 14px 20px;
+    border-radius: 0px;
+    transition: all 0.4s ease-in-out;
+    border: 0px;
+}
+.btn.btn-primary:hover {
+    background-color: #000;
+}
+
+.auth-heading {
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 1.5;
+    color: #313131;
+    margin: 0;
+}
+.auth-desc {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #313131;
+    margin: 0;
+}
+.form-floating .form-control {
+    border: 1px solid #79747E;
+    border-radius: 4px;
+    background-color: #fff;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #1C1B1F;
+}
+.form-control:focus {
+    box-shadow: none;
+    border: 1px solid #79747E;
+}
+.form-floating label {
+    color: #000;
+}
+
+.form-floating>.form-control:focus~label {
+    color: #000;
+}
+
+.auth-desc span {
+    color: #FF8682;
+    font-weight: 600;
+}
+
+
+
+

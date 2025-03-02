@@ -3,12 +3,16 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { apiClient } from "./utils/api.ts";
 import { QueryClientProvider } from "@tanstack/react-query";
 import Login from "./auth/Login.tsx";
+import VerifyOtp from "./auth/VerifyOtp.tsx";
+import ForgotPassword from "./auth/ForgotPassword.tsx";
+import ResetPassword from "./auth/ResetPassword.tsx";
 
 const router = createBrowserRouter([
   { path: "/register", element: "" },
   { path: "/login", element: <Login /> },
-  { path: "/forgot-password", element: "" },
-  { path: "/verify-otp", element: "" },
+  { path: "/forgotpassword", element: <ForgotPassword/> },
+  { path: "/resetpassword", element: <ResetPassword/> },
+  { path: "/verifyotp", element: <VerifyOtp/> },
 ]);
 
 const App: React.FC = () => {

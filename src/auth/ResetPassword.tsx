@@ -6,12 +6,11 @@ import { ReactComponent as Logo } from "../images/logo.svg";
 import ForgotPasswordImage from "../images/forgot-password-img.png";
 
 const validationSchema = yup.object().shape({
-    password: yup
-      .string()
-      .min(8, "Password must be at least 8 characters")
-      .required("Password is required"),
+  password: yup
+    .string()
+    .min(8, "Password must be at least 8 characters")
+    .required("Password is required"),
 });
-  
 
 const ResetPassword: React.FC = () => {
   const {
@@ -37,7 +36,8 @@ const ResetPassword: React.FC = () => {
               <Logo width={200} height={50} />
               <h1 className="auth-heading">Set a password</h1>
               <p className="auth-desc">
-              Your previous password has been reseted. Please set a new password for your account.
+                Your previous password has been reseted. Please set a new
+                password for your account.
               </p>
               <form onSubmit={handleSubmit(handleFormSubmit)}>
                 <div className="form-floating">
@@ -56,9 +56,9 @@ const ResetPassword: React.FC = () => {
                   )}
                 </div>
                 <button type="submit" className="btn btn-primary w-100 mt-4">
-                Set password
+                  Set password
                 </button>
-              </form>   
+              </form>
             </div>
           </div>
           <div className="col-lg-6">

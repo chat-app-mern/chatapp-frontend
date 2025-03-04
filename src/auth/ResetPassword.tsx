@@ -30,10 +30,12 @@ const ResetPassword: React.FC = () => {
   return (
     <section className="auth-form-wrapper">
       <div className="container">
+        <div className="auth-logo">
+        <Logo width={200} height={50} />
+        </div>
         <div className="row">
           <div className="col-lg-6">
             <div className="auth-form">
-              <Logo width={200} height={50} />
               <h1 className="auth-heading">Set a password</h1>
               <p className="auth-desc">
                 Your previous password has been reseted. Please set a new

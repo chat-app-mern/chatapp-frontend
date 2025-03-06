@@ -65,5 +65,4 @@ const ForgotPassword: React.FC = () => {
     </AuthSection>
   );
 };
-
 export default ForgotPassword;

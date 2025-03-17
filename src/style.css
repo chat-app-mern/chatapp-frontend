@@ -6,7 +6,13 @@
 /*==============================================================
 	Common Styles Initials
 ==============================================================*/
-
+:root{  
+    --primary-color: #1A66FF;
+    --white-color: #FFFFFF;
+    --black-color: #000000;
+    --border-color: #79747E;
+    --dropdown-bg-color: #EFEFEF;
+}
 html {
     -webkit-text-size-adjust: none;
     width: 100%;
@@ -31,9 +37,9 @@ body {
     font-family: "Poppins", sans-serif;
     font-size: 14px;
     line-height: 1.334;
-    color: #000;
+    color: var(--black-color);
     font-weight: 400;
-    background: #fff;
+    background: var(--white-color);
     width: 100%;
     min-height: 100%;
     -webkit-font-smoothing: antialiased;
@@ -330,6 +336,85 @@ input:-ms-input-placeholder {
 .auth-form-wrapper .photo-wrapper img{
     width: 100%;
 }
+/*header*/
+.header-wrap{
+    height: 120px;
+}
+.header-wrap header{
+    width: 100%;
+    position: fixed;
+    background-color: var(--primary-color);
+    z-index: 10;
+}
+.header-wrap .profile-photo{
+    height: 60px;
+}
+.header-wrap .profile-photo img{
+    width: 100%;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.header-content-wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 0px;
+}
+.header-wrap .profile-photo button{
+    background: none;
+    border: 0px;
+}
+.header-wrap .profile-photo{
+    position: relative;
+}
+.header-wrap .profile-photo .dropdown{
+    position: absolute;
+    background-color: var(--dropdown-bg-color);
+    padding: 15px;
+    width: 200px;
+    left: 50%;
+    top: 100%;
+    transform: translate(-50%);
+    z-index: 5;
+}
+.header-wrap .profile-photo .dropdown a{
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--black-color);
+    font-weight: 400;
+    transition: all 0.4s ease-in-out;
+}
+.header-wrap .profile-photo .dropdown a:hover{
+    color: var(--primary-color);
+}
+.header-wrap .links-wrapper nav ul{
+    display: flex;
+    gap: 30px;
+}
+.header-wrap .links-wrapper li{
+    position: relative;
+}
+.header-wrap .links-wrapper li a.active::after{
+    position: absolute;
+    content: '';
+    width: 100%;
+    top: 105%;
+    left: 0;
+    height: 2px;
+    background-color: var(--white-color);
+}
+.open-menu {
+    animation: slideIn 0.6s ease-in-out forwards;
+}
+@keyframes slideIn {
+    from {
+      right: -100%;
+      opacity: 0;
+    }
 
-
-
+    to {
+      right: 0;
+      opacity: 1;
+    }
+}

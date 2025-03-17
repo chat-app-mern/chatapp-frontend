@@ -1,5 +1,5 @@
-@media(max-width:991px){
-    .auth-form-wrapper{
+@media (max-width: 991px) {
+    .auth-wrap,.auth-form-wrapper{
         height: 100%;
     }
     .header-wrap .profile-photo .dropdown{
@@ -54,6 +54,11 @@
     .header-wrap .profile-photo{
         display: flex;
         flex-direction: row-reverse;
+    .auth-wrap .row {
+        --bs-gutter-x: 0;
+    }
+    .auth-form {
         gap: 20px;
     }
+}
 }

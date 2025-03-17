@@ -104,7 +104,7 @@ const Login: React.FC = () => {
                 </button>
               </form>
 
-              <Link className="auth-desc text-center mt-3" to="/register">
+              <Link className="auth-desc text-center" to="/register">
                 Don't have an account? <span>Sign up</span>
               </Link>
             </div>

@@ -5,7 +5,6 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import ForgotPasswordImage from "../images/forgot-password-img.png";
 import { Link } from "react-router-dom";
 import AuthSection from "../components/AuthSection.tsx";
-import Header from "../components/Header.tsx";
 
 const validationSchema = yup.object().shape({
   email: yup
@@ -30,9 +29,7 @@ const ForgotPassword: React.FC = () => {
   };
 
   return (
-    <>
-    <Header/>
-    {/* <AuthSection
+    <AuthSection
       heading="Forgot your password?"
       image={
         <img
@@ -65,8 +62,7 @@ const ForgotPassword: React.FC = () => {
       <Link className="auth-desc text-center" to="/login">
         <span>Back to Login</span>
       </Link>
-    </AuthSection> */}
-    </>
+    </AuthSection>
   );
 };
 export default ForgotPassword;

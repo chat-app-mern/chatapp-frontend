@@ -3,7 +3,7 @@ import { useState } from "react";
 import profilePhoto from "../images/profile-photo-header.png";
 import { ReactComponent as Home } from "../images/home-button.svg";
 import { ReactComponent as Settings } from "../images/settings-button.svg";
-import { ReactComponent as Logo } from "../images/logo-light.svg";
+import { ReactComponent as Logo } from "../images/header-logo.svg";
 import { ReactComponent as Hamburger } from "../images/hamburger.svg";
 import { Link, NavLink } from "react-router-dom";
 

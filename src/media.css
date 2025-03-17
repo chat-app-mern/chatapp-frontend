@@ -1,0 +1,11 @@
+@media (max-width: 991px) {
+    .auth-wrap {
+        height: 100%;
+    }
+    .auth-wrap .row {
+        --bs-gutter-x: 0;
+    }
+    .auth-form {
+        gap: 20px;
+    }
+}

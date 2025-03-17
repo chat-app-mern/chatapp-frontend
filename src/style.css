@@ -308,6 +308,9 @@ input:-ms-input-placeholder {
     --bs-gutter-x: 24px;
     row-gap: 16px;
 }
+.auth-img img {
+    width: 100%;
+}
 
 
 

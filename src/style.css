@@ -312,6 +312,27 @@ input:-ms-input-placeholder {
     width: 100%;
 }
 
+.auth-form-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100dvh;
+}
+.auth-form-wrapper .row{
+    --bs-gutter-x: 40px;
+    row-gap: 30px;
+}
+.auth-form{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    gap: 16px;
+}
+.auth-form-wrapper .photo-wrapper img{
+    width: 100%;
+}
 
 
 

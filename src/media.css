@@ -1,5 +1,6 @@
 @media (max-width: 991px) {
-    .auth-wrap {
+    .auth-wrap,.auth-form-wrapper{
+{
         height: 100%;
     }
     .auth-wrap .row {

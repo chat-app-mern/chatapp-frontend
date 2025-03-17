@@ -7,8 +7,15 @@ import Register from "./auth/Register.tsx";
 import VerifyOtp from "./auth/VerifyOtp.tsx";
 import ForgotPassword from "./auth/ForgotPassword.tsx";
 import ResetPassword from "./auth/ResetPassword.tsx";
+import Homepage from "./pages/Homepage.tsx";
+import UserRootLayout from "./main layout/UserRootLayout.tsx";
+import Detailpage from "./pages/Detailpage.tsx";
 
 const router = createBrowserRouter([
+  {path:'/',element:<UserRootLayout/>,children:[
+    {index:true,element:<Homepage/>},
+    {path:"chat/:id",element:<Detailpage/>}
+  ]},
   { path: "/register", element: <Register /> },
   { path: "/login", element: <Login /> },
   { path: "/forgotpassword", element: <ForgotPassword/> },

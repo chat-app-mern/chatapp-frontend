@@ -632,6 +632,7 @@ section {
   font-weight: 500;
   line-height: 22px;
   border-radius: 10px 30px 10px 30px;
+  max-width: 500px;
 }
 .chat-time {
   color: var(--border-color);

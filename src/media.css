@@ -145,4 +145,13 @@
   .chat-detail-content {
     padding: 24px 14px;
   }
+  .chat-text {
+    max-width: 350px;
+  }
+}
+
+@media (max-width: 475px) {
+  .chat-text {
+    max-width: 200px;
+  }
 }

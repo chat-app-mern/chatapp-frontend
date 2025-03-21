@@ -2,14 +2,19 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Chats from "../models/chats.ts";
 
-const ChatCard: React.FC<{chat:Chats}>=({chat}) => {
+const ChatCard: React.FC<{ chat: Chats }> = ({ chat }) => {
   return (
     <div className="chat-card-wrapper">
       <Link to={`chat/${chat.id}`}>
         <div className="chat-card">
           <div className="chat-card-information">
             <div className="chat-image">
-              <img src={`${chat.image}`} alt={chat.name} height={70} width={70} />
+              <img
+                src={`${chat.image}`}
+                alt={chat.name}
+                height={70}
+                width={70}
+              />
             </div>
             <div className="chat-details">
               <div className="name">{chat.name}</div>

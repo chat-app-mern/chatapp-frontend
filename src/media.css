@@ -1,77 +1,148 @@
 @media (max-width: 991px) {
-    .auth-wrap,.auth-form-wrapper{
-        height: 100%;
-    }
-    .header-wrap .profile-photo .dropdown{
-        width: 100px;
-    }
-    .header-wrap .profile-photo .dropdown a{
-        font-size: 14px;
-    }
+  .auth-wrap,
+  .auth-form-wrapper {
+    height: 100%;
+  }
+  .header-wrap .profile-photo .dropdown {
+    width: 100px;
+  }
+  .header-wrap .profile-photo .dropdown a {
+    font-size: 14px;
+  }
+  .chat-author {
+    gap: 24px;
+  }
+  .detail-social {
+    gap: 36px;
+  }
+  .chat-detail-header {
+    padding-bottom: 20px;
+  }
+  .chat-detail-footer {
+    padding-top: 30px;
+  }
+  .chat-details-wrap {
+    height: calc(100dvh - 150px);
+  }
+  .profile-form {
+    padding: 36px 0;
+  }
 }
-@media(min-width:768px){
-    .header-wrap .links-wrapper{
-        display: flex;
-    }
+@media (min-width: 768px) {
+  .header-wrap .links-wrapper {
+    display: flex;
+  }
 }
-@media(max-width:767px){
-    .header-wrap .header-content-wrapper{
-        padding: 20px 0px;
-    }
-    .header-wrap .links-wrapper{
-        display: none;
-        position: absolute;
-        width: 100%;
-        max-width: 200px;
-        padding: 20px;
-        right: 0;
-        height: 100dvh;
-        top: 100%;
-        background-color: var(--primary-color);
-    }
-    .header-wrap .links-wrapper nav ul{
-        flex-direction: column;
-    }
-    .header-wrap .links-wrapper.open{
-        display: flex;
-        width: 100%;
-        justify-content: center;
-    }
-    .header-wrap .header-content-wrapper{
-        flex-wrap: wrap;
-    }
-    .header-wrap .links-wrapper{
-        width: 100%;
-        order: 3;
-    }
-    .header-wrap .logo svg{
-        width: 120px;
-        height: 50px;
-    }
-    .header-wrap .profile-photo,.header-wrap .profile-photo img{
-        height: 50px;
-    }
-    .header-wrap .profile-photo{
-        display: flex;
-        flex-direction: row-reverse;
-        gap: 20px;
-    }
-    .auth-wrap .row {
-        --bs-gutter-x: 0;
-    }
-    .auth-form {
-        gap: 20px;
-    }
-    .chat-details .name{
-        font-size: 15px;
-    }
-    .section{
-        padding: 50px 0px;
-    }
-    .header-wrap{
-        height: 90px;
-    }
-    .chat-card .chat-card-information{
-        gap: 10px;
-    }
+@media (max-width: 767px) {
+  .header-wrap .header-content-wrapper {
+    padding: 20px 0px;
+  }
+  .header-wrap .links-wrapper {
+    display: none;
+    position: absolute;
+    width: 100%;
+    max-width: 200px;
+    padding: 20px;
+    right: 0;
+    height: 100dvh;
+    top: 100%;
+    background-color: var(--primary-color);
+  }
+  .header-wrap .links-wrapper nav ul {
+    flex-direction: column;
+  }
+  .header-wrap .links-wrapper.open {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+  }
+  .header-wrap .header-content-wrapper {
+    flex-wrap: wrap;
+  }
+  .header-wrap .links-wrapper {
+    width: 100%;
+    order: 3;
+  }
+  .header-wrap .logo svg {
+    width: 120px;
+    height: 50px;
+  }
+  .header-wrap .profile-photo,
+  .header-wrap .profile-photo img {
+    height: 50px;
+  }
+  .header-wrap .profile-photo {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 20px;
+  }
+  .auth-wrap .row {
+    --bs-gutter-x: 0;
+  }
+  .auth-form {
+    gap: 20px;
+  }
+  .chat-details .name {
+    font-size: 15px;
+  }
+  .section {
+    padding: 50px 0px;
+  }
+  .header-wrap {
+    height: 90px;
+  }
+  .chat-card .chat-card-information {
+    gap: 10px;
+  }
+
+  .author-name {
+    font-size: 20px;
+  }
+  .chat-author {
+    gap: 12px;
+  }
+  .author-img {
+    width: 50px;
+    height: auto;
+  }
+  .detail-social {
+    gap: 20px;
+  }
+  .detail-social img {
+    width: 20px;
+    height: 20px;
+  }
+  .chat-detail-footer {
+    padding-top: 20px;
+    gap: 10px;
+  }
+  .input-wrap {
+    gap: 5px;
+  }
+  .chat-details-wrap .chat-details {
+    padding: 12px;
+  }
+  .author-status {
+    font-size: 12px;
+  }
+  .input-wrap input {
+    height: 40px;
+  }
+  .input-wrap button {
+    height: 40px;
+    width: 40px;
+  }
+  .voice-msg {
+    padding: 10px;
+  }
+  .chat-text {
+    padding: 10px 30px;
+    font-size: 14px;
+  }
+  .chat-time {
+    font-size: 10px;
+  }
+  .chat-detail-content {
+    padding: 24px 14px;
+  }
 }

@@ -4,7 +4,7 @@ import { ReactComponent as Home } from "../images/home-button.svg";
 import { ReactComponent as Settings } from "../images/settings-button.svg";
 import Header from "../components/Header.tsx";
 
-const UserRootLayout: React.FC = () => {
+const AdminRootLayout: React.FC = () => {
   return (
     <>
       <Header
@@ -13,7 +13,7 @@ const UserRootLayout: React.FC = () => {
             <li>
               <NavLink
                 aria-label="home"
-                to="/"
+                to="/admin"
                 className={({ isActive }) => (isActive ? "active" : undefined)}
                 end
               >
@@ -25,7 +25,7 @@ const UserRootLayout: React.FC = () => {
                 className={({ isActive }) => (isActive ? "active" : undefined)}
                 end
                 aria-label="edit-profile"
-                to="/edit-profile"
+                to="edit-profile"
               >
                 <Settings width={30} height={30} />
               </NavLink>
@@ -38,4 +38,4 @@ const UserRootLayout: React.FC = () => {
   );
 };
 
-export default UserRootLayout;
+export default AdminRootLayout;

@@ -1,13 +1,11 @@
 import React from "react";
 import { useState } from "react";
 import profilePhoto from "../images/profile-photo-header.png";
-import { ReactComponent as Home } from "../images/home-button.svg";
-import { ReactComponent as Settings } from "../images/settings-button.svg";
 import { ReactComponent as Logo } from "../images/header-logo.svg";
 import { ReactComponent as Hamburger } from "../images/hamburger.svg";
-import { Link, NavLink } from "react-router-dom";
+import {Link} from "react-router-dom";
 
-const Header: React.FC = () => {
+const Header: React.FC<{links:HTMLElement}>= ({links}) => {
   const [toggle, setToggle] = useState(false);
   const [openHeader, setOpenHeader] = useState(false);
   function handleToggle(): void {
@@ -22,39 +20,14 @@ const Header: React.FC = () => {
         <div className="container">
           <div className="header-content-wrapper">
             <div className="logo">
-              <Link aria-label="home" to="/">
                 <Logo width={160} height={40} />
-              </Link>
             </div>
             <div
               className={`links-wrapper ${openHeader ? "open open-menu" : ""}`}
             >
               <nav>
                 <ul>
-                  <li>
-                    <NavLink
-                      aria-label="home"
-                      to="/"
-                      className={({ isActive }) =>
-                        isActive ? "active" : undefined
-                      }
-                      end
-                    >
-                      <Home width={30} height={30} />
-                    </NavLink>
-                  </li>
-                  <li>
-                    <NavLink
-                      className={({ isActive }) =>
-                        isActive ? "active" : undefined
-                      }
-                      end
-                      aria-label="edit-profile"
-                      to="/edit-profile"
-                    >
-                      <Settings width={30} height={30} />
-                    </NavLink>
-                  </li>
+                  {links}
                 </ul>
               </nav>
             </div>

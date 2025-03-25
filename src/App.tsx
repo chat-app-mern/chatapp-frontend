@@ -11,8 +11,27 @@ import Homepage from "./pages/Homepage.tsx";
 import UserRootLayout from "./main layout/UserRootLayout.tsx";
 import Detailpage from "./pages/Detailpage.tsx";
 import Editprofile from "./pages/Editprofile.tsx";
+import AdminRootLayout from "./main layout/AdminRootLayout.tsx";
+import Admin from "./pages/Admin.tsx";
+import AdminUserDetailPage from "./pages/Admin-UserDetailPage.tsx";
+import AdminAddUser from "./pages/Admin-AddUser.tsx";
+import AdminEditProfile from "./pages/Admin-EditProfile.tsx";
+import AdminUserEditProfile from "./pages/Admin-UserEditProfile.tsx";
 
 const router = createBrowserRouter([
+  {
+    path: "/admin",
+    element: <AdminRootLayout />,
+    children: [
+      { index: true, element: <Admin/> },
+      { path: "user/:id" , children:[
+         {index: true , element: <AdminUserDetailPage />},
+         {path: "edit-profile" ,element: <AdminUserEditProfile/>}
+      ] },
+      { path: "add-user", element: <AdminAddUser/> },
+      { path: "edit-profile", element: <AdminEditProfile/> }
+    ],
+  },
   {
     path: "/",
     element: <UserRootLayout />,

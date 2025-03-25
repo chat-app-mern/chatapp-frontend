@@ -148,6 +148,26 @@
   .chat-text {
     max-width: 350px;
   }
+  .user-detail .user-detail-wrapper{
+    padding: 20px;
+  }
+  .user-information{
+    padding: 20px 0px;
+  }
+  .user-information > .other .name{
+    width: 40%;
+    padding-left: 0px;
+  }
+  .user-detail-wrapper .user-image img {
+    height: 180px;
+    width: 180px;
+  }
+  .user-information > .other{
+    font-size: 14px;
+  }
+  .user-information > .other .value{
+    width: 60%;
+  }
 }
 
 @media (max-width: 475px) {

@@ -14,6 +14,7 @@
   --dropdown-bg-color: #efefef;
   --status-color: #1aabff;
   --offline-color: #ffa500;
+  --user-detail-color: #FFF9F9; 
   --online-color: #00ff75;
 }
 html {
@@ -212,7 +213,7 @@ input:-ms-input-placeholder {
 .btn.btn-primary {
   display: inline-block;
   color: #ffffff;
-  background-color: #515def;
+  background-color: var(--primary-color);
   font-weight: 600;
   font-size: 14px;
   line-height: 1.5;
@@ -704,4 +705,54 @@ section {
   margin-left: -108px;
   opacity: 0;
   cursor: pointer;
+}
+.user-detail .container{
+  max-width: 602px;
+}
+.user-detail .user-detail-wrapper{
+  background: var(--user-detail-color);
+  padding: 42px 38px;
+  border-radius: 20px;
+  box-shadow: 1px 1px 2px var(--black-color);
+}
+.user-detail-wrapper .user-image img{
+    border-radius: 50%;
+    height:277px;
+    width:296px;
+    object-fit: cover;
+}
+.user-detail-wrapper .user-image{
+  display: flex;
+  justify-content: center;
+}
+.user-information{
+  padding: 30px 0px;
+}
+.user-information > .name{
+  font-size: 30px;
+  color: var(--black-color);
+  line-height: 1.25;
+  font-weight: 600;
+  text-align: center;
+}
+.user-information > .other{
+  display: flex;
+  font-size: 18px;
+  line-height: 1.25;
+  font-weight: 400;
+  justify-content: center; 
+}
+.user-information > .other .name{
+  width: 50%;
+  text-transform: capitalize;
+  font-weight: 600;
+  padding-left: 100px;
+}
+.user-information > .other .value{
+  width: 50%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.hide{
+  display: none;
 }

@@ -240,7 +240,8 @@ input:-ms-input-placeholder {
   color: #313131;
   margin: 0;
 }
-.form-floating .form-control {
+
+.form-floating .form-control ,.form-select{
   border: 1px solid #79747e;
   border-radius: 4px;
   background-color: #fff;
@@ -249,7 +250,10 @@ input:-ms-input-placeholder {
   line-height: 1.5;
   color: #1c1b1f;
 }
-.form-control:focus {
+.form-select{
+  padding: 13px;
+}
+.form-control:focus,.form-select:focus{
   box-shadow: none;
   border: 1px solid #79747e;
 }

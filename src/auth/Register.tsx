@@ -5,6 +5,9 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import registerImg from "../images/register-img.png";
 import Logo from "../images/logo.svg";
+import { useMutation } from "@tanstack/react-query";
+import { backendUrl, sendRequest } from "../utils/api.ts";
+import Swal from "sweetalert2";
 
 const validationSchema = yup.object().shape({
   firstName: yup.string().required("First Name is required"),
@@ -13,18 +16,18 @@ const validationSchema = yup.object().shape({
     .string()
     .email("Invalid email format")
     .required("Email is required"),
-  phone: yup.string().required("Phone number is required"),
+  phone: yup
+    .string()
+    .required("Phone number is required")
+    .matches(/^\d{10}$/, "Phone number must be exactly 10 digits"),
   password: yup
     .string()
-    .min(6, "Password must be at least 6 characters")
+    .min(8, "Password must be at least 6 characters")
     .required("Password is required"),
-  confirmPassword: yup
+  gender: yup
     .string()
-    .oneOf([yup.ref("password")], "Passwords must match")
-    .required("Confirm Password is required"),
-  terms: yup
-    .boolean()
-    .oneOf([true], "You must accept the Terms and Privacy Policy"),
+    .oneOf(["male", "female"], "Please select a valid gender")
+    .required("Gender is required"),
 });
 
 const Register: React.FC = () => {
@@ -36,10 +39,35 @@ const Register: React.FC = () => {
   } = useForm({
     resolver: yupResolver(validationSchema),
   });
-
+  const { isPending, mutate } = useMutation({
+    mutationFn: sendRequest,
+    onSuccess(response) {
+      if (response.statusCode === 201) {
+        Swal.fire({
+          title: `${response.data.message}`,
+          icon: "success",
+        });
+        navigate('/verify-otp');
+      }
+    },
+    onError(error) {
+      Swal.fire({
+        icon: "error",
+        title: `${error.message}`,
+      });
+    },
+  });
   const onSubmit = (data: any) => {
-    console.log("Register Data:", data);
-    navigate("/login");
+    mutate({
+      url: `${backendUrl}/api/user/signup`,
+      configuration: {
+        method: "POST",
+        body: JSON.stringify(data),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      },
+    });
   };
 
   return (
@@ -65,7 +93,6 @@ const Register: React.FC = () => {
               <p className="auth-desc">
                 Let’s get you set up so you can access your account.
               </p>
-
               <form className="auth-form" onSubmit={handleSubmit(onSubmit)}>
                 <div className="row">
                   <div className="col-md-6">
@@ -127,7 +154,6 @@ const Register: React.FC = () => {
                     </div>
                   </div>
                 </div>
-
                 <div className="form-floating">
                   <input
                     type="password"
@@ -140,44 +166,28 @@ const Register: React.FC = () => {
                     <p className="text-danger">{errors.password.message}</p>
                   )}
                 </div>
-
-                <div className="form-floating">
-                  <input
-                    type="password"
-                    className="form-control"
-                    {...register("confirmPassword")}
-                    placeholder="Confirm Password"
-                  />
-                  <label>Confirm Password</label>
-                  {errors.confirmPassword && (
-                    <p className="text-danger">
-                      {errors.confirmPassword.message}
-                    </p>
+                <div>
+                  <select
+                    {...register("gender")}
+                    className="form-select"
+                    defaultValue=""
+                  >
+                    <option value="">Select Your Gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                  </select>
+                  {errors.gender && (
+                    <p className="text-danger">{errors.gender.message}</p>
                   )}
                 </div>
-
-                <div className="auth-check">
-                  <div className="form-check">
-                    <input
-                      className="form-check-input"
-                      type="checkbox"
-                      {...register("terms")}
-                    />
-                    <label className="form-check-label auth-desc">
-                      I agree to all the <span>Terms</span> and{" "}
-                      <span>Privacy Policy</span>
-                    </label>
-                    {errors.terms && (
-                      <p className="text-danger">{errors.terms.message}</p>
-                    )}
-                  </div>
-                </div>
-
-                <button type="submit" className="btn btn-primary">
-                  Create account
+                <button
+                  type="submit"
+                  disabled={isPending ? true : false}
+                  className="btn btn-primary"
+                >
+                  {isPending ? "Signing up" : "Create account"}
                 </button>
               </form>
-
               <Link className="auth-desc text-center" to="/login">
                 Already have an account? <span>Login</span>
               </Link>
